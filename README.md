@@ -14,7 +14,7 @@ A resilient, scalable 3-tier monorepo architecture built with Next.js (Presentat
                                | HTTP / SSR / REST
 +------------------------------v-------------------------------+
 |                 Application Tier (apps/api)                  |
-|             Express + TypeScript (Port 5000)                 |
+|             Express + TypeScript (Port 5001)                 |
 |       [Health Probes | Prometheus Metrics | Drizzle]         |
 +------------------------------+-------------------------------+
                                | PostgreSQL Protocol (Port 5432)
@@ -58,7 +58,7 @@ Create `.env` files for the root/services.
 2. **API Tier `.env` (`apps/api/.env`):**
    ```env
    NODE_ENV=development
-   PORT=5000
+   PORT=5001
    DATABASE_URL=postgresql://postgres:postgres@localhost:5432/production_db
    ALLOWED_ORIGINS=http://localhost:3000
    ```
