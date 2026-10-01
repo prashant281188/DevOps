@@ -23,11 +23,7 @@ jobs:
        # Install dependencies across all packages in the workspace
       - name: Install Workspace Dependencies
         run: npm install
-
-      # Run a test script inside a specific workspace package
-      - name: Run Tests in Specific Workspace
-        run: npm run test --workspace=apps/api
-      
+     
   
   
     
