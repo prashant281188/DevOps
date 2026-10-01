@@ -10,6 +10,6 @@ jobs:
     steps:
       - name: chekout code
         uses: actions/checkout@v4
-      - run: echo "code checkout successfully
+      - run: echo "code checkout successfully"
 
   
