@@ -25,26 +25,8 @@ jobs:
         run: |
           npm install
           ls -a
+          npm run 
      
   
   
-    
-  staging:
-        environment: staging
-        runs-on: ubuntu-slim
-        steps:
-          - name: staging
-            run: echo "staging step with ${{vars.DB_NAME}}"
-            
-  
-  
-  deploy:
-        environment: deploy
-        needs: 
-          - build
-        runs-on: ubuntu-slim
-        steps:
-          - name: deploy
-            run: echo "deployment with ${{vars.DB_NAME}}"
-          - name: deploy
-            run: echo "deploy application"
+
