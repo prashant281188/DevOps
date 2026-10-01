@@ -26,7 +26,7 @@ jobs:
 
       # Run a test script inside a specific workspace package
       - name: Run Tests in Specific Workspace
-        run: npm run test --workspace=app/api
+        run: npm run test --workspace=apps/api
       
   
   
