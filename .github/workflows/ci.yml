@@ -1,0 +1,15 @@
+name: CI Pipeline for 3 Tier NextJs Webapp
+
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-slim
+    steps:
+      - name: chekout code
+        uses: actions/checkout@v4
+      - run: echo "code checkout successfully
+
+  
