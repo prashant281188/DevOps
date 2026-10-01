@@ -6,21 +6,40 @@ on:
   
 jobs:
   build:
+    environment: build
     runs-on: ubuntu-slim
     steps:
       - name: chekout code
         uses: actions/checkout@v4
-      - run: echo "code checkout successfully"
+      - run: echo "code checkout successfully with ${{vars.DB_NAME}}"
+  
+  
+  
   test:
       runs-on: ubuntu-slim
       steps:
         - name: testing code 
           run: echo "testing phase"
+
+  
+  
+  staging:
+        environment: staging
+        runs-on: ubuntu-slim
+        steps:
+          - name: staging
+            run: echo "staging step with ${{vars.DB_NAME}}"
+            
+  
+  
   deploy:
+        environment: deploy
         needs: 
           - build
           - test
         runs-on: ubuntu-slim
         steps:
+          - name: deploy
+            run: echo "deployment with ${{vars.DB_NAME}}"
           - name: deploy
             run: echo "deploy application"
