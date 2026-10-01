@@ -1,0 +1,16 @@
+{
+  "name": "three-tier-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm --workspace=@app/api run dev",
+    "dev:web": "npm --workspace=@app/web run dev",
+    "build:api": "npm --workspace=@app/api run build",
+    "build:web": "npm --workspace=@app/web run build",
+    "db:generate": "npm --workspace=@app/api run db:generate",
+    "db:migrate": "npm --workspace=@app/api run db:migrate"
+  }
+}
