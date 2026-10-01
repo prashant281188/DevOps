@@ -5,7 +5,7 @@ async function addItem(formData: FormData) {
   "use server";
   const title = formData.get("title") as string;
   const description = formData.get("description") as string;
-  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+  const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
   await fetch(`${API_BASE}/api/v1/items`, {
     method: "POST",

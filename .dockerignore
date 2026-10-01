@@ -1,0 +1,43 @@
+# Dependencies (Must be installed cleanly inside the container)
+**/node_modules
+
+# Build artifacts
+**/dist
+**/.next
+**/out
+**/build
+**/coverage
+
+# Local Environment & Secrets
+**/.env
+**/.env*.local
+**/*.env
+!**/*.env.example
+
+# Version Control
+.git
+.gitignore
+.gitattributes
+
+# Documentation & Readmes
+*.md
+LICENSE
+
+# Docker files (No need to copy them inside the container image)
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Logs
+**/*.log
+logs/
+
+# IDE & Editor files
+.vscode
+.idea
+*.sublime-project
+*.sublime-workspace
+
+# OS Files
+.DS_Store
+Thumbs.db
