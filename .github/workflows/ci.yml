@@ -20,11 +20,13 @@ jobs:
         # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
           node-version: 24
 
-      - name: Installing dependecies
-        run: |
-          "npm app/api run build"
-          "npm app/web run build"
-          echo "build success"
+       # Install dependencies across all packages in the workspace
+      - name: Install Workspace Dependencies
+        run: npm install
+
+      # Run a test script inside a specific workspace package
+      - name: Run Tests in Specific Workspace
+        run: npm run test --workspace=app/api
       
   
   
