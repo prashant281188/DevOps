@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
   
 jobs:
+  
   build:
     environment: build
     runs-on: ubuntu-slim
@@ -12,17 +13,22 @@ jobs:
       - name: chekout code
         uses: actions/checkout@v4
       - run: echo "code checkout successfully with ${{vars.DB_NAME}}"
-  
-  
-  
-  test:
-      runs-on: ubuntu-slim
-      steps:
-        - name: testing code 
-          run: echo "testing phase"
+      
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.5.0
+        with:
+        # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: 24
 
+      - name: Installing dependecies
+        run: |
+          "npm --workspace=@app/api run build"
+          "npm --workspace=@app/web run build"
+          echo "build success"
+      
   
   
+    
   staging:
         environment: staging
         runs-on: ubuntu-slim
@@ -36,7 +42,6 @@ jobs:
         environment: deploy
         needs: 
           - build
-          - test
         runs-on: ubuntu-slim
         steps:
           - name: deploy
