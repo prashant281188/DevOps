@@ -65,7 +65,7 @@ Create `.env` files for the root/services.
 
 3. **Web Tier `.env.local` (`apps/web/.env.local`):**
    ```env
-   NEXT_PUBLIC_API_URL=http://localhost:5000
+   NEXT_PUBLIC_API_URL=http://localhost:5001
    ```
 
 ---
@@ -112,7 +112,7 @@ You can run both tiers concurrently in separate terminals or run them targeted v
 ```bash
 npm run dev:api
 ```
-The API server will boot with live-reload on **`http://localhost:5000`**.
+The API server will boot with live-reload on **`http://localhost:5001`**.
 
 ### Terminal 2: Presentation Tier (Web)
 
