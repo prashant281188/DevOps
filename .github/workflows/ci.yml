@@ -22,7 +22,9 @@ jobs:
 
        # Install dependencies across all packages in the workspace
       - name: Install Workspace Dependencies
-        run: npm install
+        run: |
+          npm install
+          ls -a
      
   
   
