@@ -11,5 +11,16 @@ jobs:
       - name: chekout code
         uses: actions/checkout@v4
       - run: echo "code checkout successfully"
-
-  
+  test:
+      runs-on: ubuntu-slim
+      steps:
+        - name: testing code 
+          run: echo "testing phase"
+  deploy:
+        needs: 
+          - build
+          - test
+        runs-on: ubuntu-slim
+        steps:
+          - name: deploy
+            run: echo "deploy application"
