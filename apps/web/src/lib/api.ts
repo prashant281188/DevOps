@@ -5,7 +5,7 @@ export interface Item {
   createdAt: string;
 }
 
-const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000";
+const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5001";
 
 export async function fetchItems(): Promise<Item[]> {
   const res = await fetch(`${API_BASE}/api/v1/items`, { cache: "no-store" });
