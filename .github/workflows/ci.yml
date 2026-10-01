@@ -22,8 +22,8 @@ jobs:
 
       - name: Installing dependecies
         run: |
-          "npm --workspace=@app/api run build"
-          "npm --workspace=@app/web run build"
+          "npm app/api run build"
+          "npm app/web run build"
           echo "build success"
       
   
