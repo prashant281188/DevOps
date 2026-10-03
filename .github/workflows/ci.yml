@@ -71,6 +71,7 @@ jobs:
             !.next/cache
             public
             next.config.js
+            package.json
             package-lock.json
 
 #########################################################
