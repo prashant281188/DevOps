@@ -10,7 +10,8 @@ on:
   
 jobs:
   test:
-    runs-on: ubuntu-slim1
+    runs-on: ubuntu-slim-not
+    timeout-minutes: 1
      
     steps:
     - name: chekout code
