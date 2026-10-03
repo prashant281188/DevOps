@@ -44,14 +44,58 @@ jobs:
         with:
         # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
           node-version: 24
+          cache: 'npm'
 
        # Install dependencies across all packages in the workspace
       - name: Install Workspace Dependencies
         run:  npm ci
+
+      
       - name: run build  
         run: |
           npm run build:api
           npm run build:web
+          
+      - name: upload atrifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: |
+            .next
+            !.next/cache
+            public
+            next.config.js
+            package.json
+  
+  deploy-demo:
+    needs: build
+    runs-on: ubuntu-slim
+    steps:
+      - name: download artifacts
+        uses: actions/download-artifact@v5
+        with: 
+          name: my-artifact
+          path: |
+              .next
+              !.next/cache
+              public
+              next.config.js
+              package.json
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v6.5.0
+        with:
+        # Version Spec of the version to use. Examples: 12.x, 10.15.1, >=10.15.0.
+          node-version: 24
+          cache: 'npm'
+
+      - name: install dependecies
+        run: npm ci
+    
+      
+
+      
+    
+  
      
   
   
