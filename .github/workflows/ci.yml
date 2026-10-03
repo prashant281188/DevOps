@@ -67,10 +67,9 @@ jobs:
         with:
           name: my-artifact
           path: |
-            .next
-            !.next/cache
-            public
-            next.config.js
+            apps/web/.next
+            !apps/web/.next/cache
+            apps/web/next.config.mjs
             package.json
             package-lock.json
           include-hidden-files: true
