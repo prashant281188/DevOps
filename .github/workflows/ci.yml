@@ -10,7 +10,7 @@ on:
   
 jobs:
   test:
-    runs-on: ubuntu-slim-not
+    runs-on: ubuntu-slim
     timeout-minutes: 1
      
     steps:
