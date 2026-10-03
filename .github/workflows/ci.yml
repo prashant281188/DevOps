@@ -85,12 +85,10 @@ jobs:
         uses: actions/download-artifact@v5
         with: 
           name: my-artifact
-          path: |
-              .next
-              !.next/cache
-              public
-              next.config.js
-              package-lock.json
+       
+
+      - name: list download articats
+        run: ls -la
       - name: Setup Node.js environment
         uses: actions/setup-node@v6.5.0
         with:
