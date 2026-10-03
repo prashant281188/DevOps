@@ -89,7 +89,7 @@ jobs:
        
 
       - name: list download articats
-        run: ls -la
+        run: tree -a
       - name: Setup Node.js environment
         uses: actions/setup-node@v6.5.0
         with:
