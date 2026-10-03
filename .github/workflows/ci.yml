@@ -9,6 +9,10 @@ on:
   workflow_dispatch:
   
 jobs:
+
+#########################################################
+#                        TEST                           #     
+#########################################################
   test:
     runs-on: ubuntu-slim
     timeout-minutes: 1
@@ -29,7 +33,9 @@ jobs:
     - name: test  
       run: echo "testing..."
 
-      
+#########################################################
+#                        BUILD                          #     
+#########################################################
   build:
     needs: test
     environment: build
@@ -66,6 +72,10 @@ jobs:
             public
             next.config.js
             package-lock.json
+
+#########################################################
+#                   DEPLOY-DEMO                         #     
+#########################################################
   
   deploy-demo:
     needs: build
@@ -80,7 +90,7 @@ jobs:
               !.next/cache
               public
               next.config.js
-              package.json
+              package-lock.json
       - name: Setup Node.js environment
         uses: actions/setup-node@v6.5.0
         with:
