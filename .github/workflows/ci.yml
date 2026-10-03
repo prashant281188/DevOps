@@ -10,11 +10,11 @@ on:
   
 jobs:
   test:
-    runs-on ubuntu-slim
+    runs-on: ubuntu-slim
      
     steps:
     - name: chekout code
-      uses: actions/checkout@v4
+      uses: actions/checkout@v99
     
     - name: setup node
       uses: actions/setup-node@v4
