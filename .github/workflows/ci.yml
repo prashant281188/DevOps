@@ -70,7 +70,7 @@ jobs:
             !apps/web/.next/cache
             apps/web/next.config.mjs
             package.json
-            package-lock1.json
+            package-lock.json
           include-hidden-files: true
 
 #########################################################
