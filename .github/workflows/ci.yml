@@ -10,7 +10,7 @@ on:
   
 jobs:
   test:
-    runs-on ubuntu-slim
+    runs-on: ubuntu-slim1
      
     steps:
     - name: chekout code
