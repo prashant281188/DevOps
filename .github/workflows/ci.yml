@@ -100,10 +100,7 @@ jobs:
       - name: install dependecies
         run: npm ci
 
-      - name: npm run
-        run: |
-          npm run dev:web
-          npm run dev:api
+      
     
       
 
