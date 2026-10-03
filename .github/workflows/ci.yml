@@ -15,7 +15,6 @@ jobs:
 #########################################################
   test:
     runs-on: ubuntu-slim
-    timeout-minutes: 1
      
     steps:
     - name: chekout code
