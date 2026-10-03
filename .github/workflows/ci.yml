@@ -9,7 +9,25 @@ on:
   workflow_dispatch:
   
 jobs:
-  
+  test:
+    runs-on: ubuntu-slim
+     
+    steps:
+    - name: chekout code
+      uses: actions/checkout@v4
+    
+    - name: setup node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+
+    - name: install dependecies
+      run: npm ci
+      
+    - name: test  
+      run: echo "testing"
+
+      
   build:
     environment: build
     runs-on: ubuntu-slim
@@ -27,9 +45,9 @@ jobs:
        # Install dependencies across all packages in the workspace
       - name: Install Workspace Dependencies
         run: |
-          npm install
-          ls -a
-          npm run 
+          npm ci
+          npm run build
+           
      
   
   
