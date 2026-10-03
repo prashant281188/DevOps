@@ -73,6 +73,7 @@ jobs:
             next.config.js
             package.json
             package-lock.json
+          include-hidden-files: true
 
 #########################################################
 #                   DEPLOY-DEMO                         #     
