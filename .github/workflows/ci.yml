@@ -2,6 +2,10 @@ name: CI Pipeline for 3 Tier NextJs Webapp
 
 
 on:
+  push: 
+    branches: ['main']
+  pull_request:  
+    branches: ['main']
   workflow_dispatch:
   
 jobs:
