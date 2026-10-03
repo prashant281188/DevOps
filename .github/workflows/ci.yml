@@ -30,6 +30,7 @@ jobs:
 
       
   build:
+    needs: test
     environment: build
     runs-on: ubuntu-slim
     steps:
